@@ -11,29 +11,16 @@ html
 
 body
 {
-    height: 100%;
+    min-height: 100%;
     font-family: PixelDigivolve;
     background-color: rgb(35, 60, 75);
-    background-image: linear-gradient(to bottom, rgb(45, 90, 100), rgb(35, 60, 75));
+    background-image: url(../media/bg_stars_transparent.png), linear-gradient(to bottom, rgb(45, 90, 100), rgb(35, 60, 75));
 }
 
 #wrapper
 {
     margin-top: 5rem;
 }
-
-    #wrapper::after
-    {
-        content: "";
-        background-image: url(../media/bg_stars.png);
-        opacity: 0.5;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        position: absolute;
-        z-index: -1;
-    }
 
 .container
 {
