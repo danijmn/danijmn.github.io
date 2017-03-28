@@ -3,12 +3,16 @@
 var MIN_SLIDE_HEIGHT_PX = 200;
 var EXTRA_SPACE_AFTER_SLIDES_PX = 35;
 
+var carousel = null;
+
 var _ready = false;
 $(document).ready(function ()
 {
     _ready = true;
+    carousel = $("#media-show");
 
-    $("#media-show").slick({
+    carousel.slick({
+        lazyLoad: "progressive",
         infinite: true,
         dots: true,
         waitForAnimate: false,
@@ -18,6 +22,7 @@ $(document).ready(function ()
         centerMode: true,
         centerPadding: "60px"
     });
+    carousel.on("lazyLoaded", function (event, slick, image, imageSource) { refreshCarousel(); });
 
     recomputeMediaSize(true);
     setInterval(function () { recomputeMediaSize(false); }, 500);
@@ -48,7 +53,11 @@ function recomputeMediaSize(forced)
             "max-width": carousel.width() + "px"
         });
 
-        carousel.slick("slickGoTo", carousel.slick("slickCurrentSlide"), true);
+        refreshCarousel();
     }
 }
 
+function refreshCarousel()
+{
+    carousel.slick("slickGoTo", carousel.slick("slickCurrentSlide"), true);
+}
