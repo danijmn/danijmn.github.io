@@ -3,8 +3,11 @@
 var MIN_SLIDE_HEIGHT_PX = 200;
 var EXTRA_SPACE_AFTER_SLIDES_PX = 35;
 
+var _ready = false;
 $(document).ready(function ()
 {
+    _ready = true;
+
     $("#media-show").slick({
         infinite: true,
         dots: true,
@@ -16,24 +19,22 @@ $(document).ready(function ()
         centerPadding: "60px"
     });
 
-    recomputeMediaSize();
+    recomputeMediaSize(true);
+    setInterval(function () { recomputeMediaSize(false); }, 500);
+    $(window).resize(function () { recomputeMediaSize(false); });
 });
 
-setInterval(function ()
+$(window).on("load", function ()
 {
-    recomputeMediaSize();
-}, 500);
-
-$(window).resize(function ()
-{
-    recomputeMediaSize();
+    if (_ready)
+        recomputeMediaSize(true);
 });
 
 var _lastWindowHeight = null, _lastWindowWidth = null;
-function recomputeMediaSize()
+function recomputeMediaSize(forced)
 {
     var currentWindowHeight = $(window).height(), currentWindowWidth = $(window).width();
-    if (_lastWindowHeight != currentWindowHeight || _lastWindowWidth != currentWindowWidth)
+    if (forced || _lastWindowHeight != currentWindowHeight || _lastWindowWidth != currentWindowWidth)
     {
         _lastWindowHeight = currentWindowHeight;
         _lastWindowWidth = currentWindowWidth;
