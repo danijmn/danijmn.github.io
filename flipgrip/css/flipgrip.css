@@ -36,10 +36,7 @@ body
 {
     max-width: 100%;
     width: 100%;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 50px;
-    padding-bottom: 10px;
+    padding: 50px;
     background-color: rgba(0, 0, 0, 0.75);
 }
 
@@ -49,34 +46,26 @@ body
     margin-right: 15px;
     transition: opacity 0.2s;
     transition: transform 0.2s;
-    display: none; /*Should only be displayed after loading*/
 }
 
-    #media-show .slick-slide:not(.slick-active)
+    #media-show .slick-slide:not(.slick-current)
     {
         opacity: 0.3;
         transform: scale(0.9);
     }
 
-.slick-dots
+.slick-arrow
 {
-    position: relative;
+    opacity: 0.5;
+    transition: opacity .25s ease-in-out;
 }
 
-    .slick-dots li button:before
-    {
-        color: white;
-    }
-
-    .slick-dots li.slick-active button:before
-    {
-        color: white;
-    }
-
-@media (max-width: 400px)
+.media-container:hover .slick-arrow
 {
-    .slick-dots li
-    {
-        display: none;
-    }
+    opacity: 1;
+}
+
+.slick-prev.slick-disabled:before, .slick-next.slick-disabled:before
+{
+    opacity: 0.1;
 }

@@ -4,28 +4,23 @@ var MIN_SLIDE_HEIGHT_PX = 200;
 var EXTRA_SPACE_AFTER_SLIDES_PX = 35;
 
 var carousel = null;
+var logo = null;
 
 var _ready = false;
 $(document).ready(function ()
 {
     _ready = true;
     carousel = $("#media-show");
+    logo = $("#logo");
 
     carousel.slick({
-        lazyLoad: "progressive",
-        infinite: true,
-        dots: true,
+        infinite: false,
         waitForAnimate: false,
         variableWidth: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
         centerPadding: "60px"
-    });
-    carousel.on("lazyLoaded", function (event, slick, image, imageSource)
-    {
-        image.css("display", "block");
-        refreshCarousel();
     });
 
     recomputeMediaSize(true);
@@ -49,9 +44,7 @@ function recomputeMediaSize(forced)
         _lastWindowWidth = currentWindowWidth;
 
         var slide = $("#media-show .slick-slide");
-        var slide_height = Math.max(MIN_SLIDE_HEIGHT_PX, currentWindowHeight - $("#logo").outerHeight(true) - $("#media-show-container").outerHeight(true) - EXTRA_SPACE_AFTER_SLIDES_PX + slide.height());
-        var carousel = $("#media-show");
-
+        var slide_height = Math.max(MIN_SLIDE_HEIGHT_PX, currentWindowHeight - logo.outerHeight(true) - $("#media-show-container").outerHeight(true) - EXTRA_SPACE_AFTER_SLIDES_PX + slide.height());
         slide.css({
             "max-height": slide_height + "px",
             "max-width": carousel.width() + "px"
