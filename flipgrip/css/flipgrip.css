@@ -43,22 +43,13 @@ body
     background-color: rgba(0, 0, 0, 0.75);
 }
 
-#media-show-container
-{
-    height: 200px; /*Placeholder until loaded*/
-}
-
-#media-show
-{
-    visibility: hidden; /*Placeholder until loaded*/
-}
-
 #media-show .slick-slide
 {
     margin-left: 15px;
     margin-right: 15px;
     transition: opacity 0.2s;
     transition: transform 0.2s;
+    display: none; /*Should only be displayed after loading*/
 }
 
     #media-show .slick-slide:not(.slick-active)
