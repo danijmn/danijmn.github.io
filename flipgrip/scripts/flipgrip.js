@@ -11,8 +11,10 @@ $(document).ready(function ()
     _ready = true;
     carousel = $("#media-show");
 
+    carousel.css("visibility", "visible");
+    $("#media-show-container").css("height", "auto");
+
     carousel.slick({
-        lazyLoad: "progressive",
         infinite: true,
         dots: true,
         waitForAnimate: false,
@@ -22,7 +24,6 @@ $(document).ready(function ()
         centerMode: true,
         centerPadding: "60px"
     });
-    carousel.on("lazyLoaded", function (event, slick, image, imageSource) { refreshCarousel(); });
 
     recomputeMediaSize(true);
     setInterval(function () { recomputeMediaSize(false); }, 500);

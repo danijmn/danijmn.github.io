@@ -43,6 +43,16 @@ body
     background-color: rgba(0, 0, 0, 0.75);
 }
 
+#media-show-container
+{
+    height: 200px; /*Placeholder until loaded*/
+}
+
+#media-show
+{
+    visibility: hidden; /*Placeholder until loaded*/
+}
+
 #media-show .slick-slide
 {
     margin-left: 15px;
@@ -56,21 +66,6 @@ body
         opacity: 0.3;
         transform: scale(0.9);
     }
-
-#media-show img
-{
-    display: none;
-}
-
-#media-show img:first-child
-{
-    display: block;
-}
-
-#media-show.slick-initialized img
-{
-    display: block;
-}
 
 .slick-dots
 {
