@@ -12,12 +12,20 @@ html
 body
 {
     min-height: 100%;
-    font-family: PixelDigivolve;
     background-color: rgb(35, 60, 75);
     background-image: url(../media/bg_stars_transparent.png), linear-gradient(to bottom, rgb(45, 90, 100), rgb(35, 60, 75));
 }
 
-.container
+body,
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-caption span
+{
+    font-family: PixelDigivolve;
+    text-shadow: 3px 2px 1px black;
+}
+
+.container,
+.bx-wrapper .bx-pager
 {
     color: white;
 }
@@ -30,16 +38,6 @@ body
     max-width: 100%;
     margin-top: 5rem;
     margin-bottom: 5rem;
-}
-
-.media-container
-{
-    max-width: 100%;
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 50px;
-    background-color: rgba(0, 0, 0, 0.6);
 }
 
 #media-show li img
@@ -56,29 +54,34 @@ body
 
 .bx-wrapper
 {
-    border: 0;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
     box-shadow: none;
-    background-color: transparent;
+    border: none;
+    background: none;
 }
 
     .bx-wrapper img
     {
         margin-left: auto;
         margin-right: auto;
+        box-sizing: border-box;
+        border: 8px solid black;
+        border-radius: 25px;
     }
 
 .bx-controls-direction
 {
-    opacity: 0;
+    opacity: 0.25;
     transition: opacity .25s ease-in-out;
 }
 
-.media-container:hover .bx-controls-direction
+#media-show-container:hover .bx-controls-direction
 {
     opacity: 1;
 }
 
-.bx-wrapper .bx-pager, .bx-wrapper .bx-caption span
+.bx-wrapper .bx-controls-direction a
 {
-    font-family: PixelDigivolve;
+    transform: scale(0.85);
 }
