@@ -57,6 +57,21 @@ body
         transform: scale(0.9);
     }
 
+#media-show img
+{
+    display: none;
+}
+
+#media-show img:first-child
+{
+    display: block;
+}
+
+#media-show.slick-initialized img
+{
+    display: block;
+}
+
 .slick-dots
 {
     position: relative;
