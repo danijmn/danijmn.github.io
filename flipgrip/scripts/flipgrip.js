@@ -15,6 +15,8 @@ $(document).ready(function ()
     carousel = $("#media-show");
     header = $("header");
 
+    carousel.css("display", "block");//Start displaying the carousel
+
     sliderHandler = carousel.bxSlider({
         moveSlides: 1,
         slideMargin: 30,
