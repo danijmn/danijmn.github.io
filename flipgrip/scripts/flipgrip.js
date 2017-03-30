@@ -19,7 +19,8 @@ $(document).ready(function ()
         moveSlides: 1,
         slideMargin: 30,
         speed: 300,
-        keyboardEnabled: true
+        keyboardEnabled: true,
+        preventDefaultSwipeY: true
     });
 
     recomputeMediaSize(true);
