@@ -46,6 +46,12 @@ body,
     max-height: 75px;
 }
 
+#media-show-container
+{
+    padding: 25px 5% 15px 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 #media-show li img
 {
     transition: opacity 0.3s;
@@ -73,7 +79,7 @@ body,
         margin-left: auto;
         margin-right: auto;
         box-sizing: border-box;
-        border: 8px solid black;
+        border: 5px solid black;
         border-radius: 25px;
     }
 
