@@ -103,7 +103,7 @@ body,
 /*SLIDER PAGER*/
 #media-show-container .bx-pager
 {
-    position: relative;
+    position: static;
     bottom: 0;
     padding-top: 10px;
 }
