@@ -4,7 +4,7 @@ var MIN_SLIDE_HEIGHT_PX = 200;
 var EXTRA_SPACE_AFTER_SLIDES_PX = 35;
 
 var carousel = null;
-var logo = null;
+var header = null;
 var sliderHandler = null;
 
 var _ready = false;
@@ -13,7 +13,7 @@ $(document).ready(function ()
     _ready = true;
 
     carousel = $("#media-show");
-    logo = $("#logo");
+    header = $("header");
 
     sliderHandler = carousel.bxSlider({
         moveSlides: 1,
@@ -43,9 +43,10 @@ function recomputeMediaSize(forced)
         _lastWindowWidth = currentWindowWidth;
 
         var slide = $("#media-show img");
-        var slide_height = Math.max(MIN_SLIDE_HEIGHT_PX, currentWindowHeight - logo.outerHeight(true) - $("#media-show-container").outerHeight(true) - EXTRA_SPACE_AFTER_SLIDES_PX + slide.height());
+        var slide_height = Math.max(MIN_SLIDE_HEIGHT_PX, currentWindowHeight - header.outerHeight(true) - $("#media-show-container").outerHeight(true) - EXTRA_SPACE_AFTER_SLIDES_PX + slide.height());
         slide.css("max-height", slide_height + "px");
         sliderHandler.redrawSlider();
+        recomputeMediaSize(false);
     }
 }
 
