@@ -19,7 +19,6 @@ $(document).ready(function ()
         moveSlides: 1,
         slideMargin: 30,
         speed: 300,
-        pagerType: "short",
         keyboardEnabled: true
     });
 
@@ -48,4 +47,9 @@ function recomputeMediaSize(forced)
         slide.css("max-height", slide_height + "px");
         sliderHandler.redrawSlider();
     }
+}
+
+function showArrows(show)
+{
+    $("#media-show-container .bx-controls-direction").css("opacity", show ? 1 : 0);
 }

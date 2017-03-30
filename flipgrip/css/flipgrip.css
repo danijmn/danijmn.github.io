@@ -70,18 +70,20 @@ body,
         border-radius: 25px;
     }
 
-.bx-controls-direction
+#media-show-container .bx-controls-direction
 {
-    opacity: 0.25;
+    opacity: 0;
     transition: opacity .25s ease-in-out;
-}
-
-#media-show-container:hover .bx-controls-direction
-{
-    opacity: 1;
 }
 
 .bx-wrapper .bx-controls-direction a
 {
     transform: scale(0.85);
+}
+
+.bx-wrapper .bx-pager
+{
+    position: relative;
+    bottom: 0;
+    padding-top: 10px;
 }
