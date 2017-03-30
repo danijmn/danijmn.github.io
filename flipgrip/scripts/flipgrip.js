@@ -6,22 +6,33 @@ var MIN_SLIDE_HEIGHT_PX = 200;
 //The minimum extra space to keep after the slides.
 var EXTRA_SPACE_AFTER_SLIDES_PX = 35;
 
-//Reference to the page's media carousel/slider.
-var carousel = null;
+//Reference to the element that wraps all elements inside the page's body.
+var wrapper = null;
 
 //Reference to the page's header containing the logo.
 var header = null;
 
+//Reference to the page's media carousel/slider.
+var carousel = null;
+
 //Reference to the bxSlider component of the carousel.
 var sliderHandler = null;
+
+//Reference to the carousel's arrow controls.
+var arrows = null;
+
+//Reference to the element that fills space between the main content and the footer when the window is taller than the content.
+var preFooterFiller = null;
 
 var _ready = false;
 $(document).ready(function ()
 {
     _ready = true;
 
-    carousel = $("#media-show");
+    wrapper = $("#wrapper");
     header = $("header");
+    carousel = $("#media-show");
+    preFooterFiller = $("#pre-footer-filler");
 
     carousel.css("display", "block");//Start displaying the carousel
 
@@ -33,24 +44,32 @@ $(document).ready(function ()
         keyboardEnabled: true
     });
 
-    //Compute slider size and subscribe to window resize event (also recompute slider size automatically when window resize event isn't received)
-    recomputeMediaSize(true);
-    $(window).resize(function () { recomputeMediaSize(false); });
-    setInterval(function () { recomputeMediaSize(false); }, 500);
+    arrows = $("#media-show-container .bx-controls-direction");
+
+    //Compute optimal element sizes and subscribe to window resize event (also recompute sizes automatically when window resize event isn't received)
+    recomputeElementSizes(true);
+    $(window).resize(function () { recomputeElementSizes(false); });
+    setInterval(function () { recomputeElementSizes(false); }, 500);
 });
 
 $(window).on("load", function ()
 {
     if (_ready)
-        recomputeMediaSize(true);//Recompute slider size once all content is loaded (unless document.ready hasn't run yet)
+        recomputeElementSizes(true);//Recompute sizes once all content is loaded (unless document.ready hasn't run yet)
 });
 
-var _lastWindowHeight = null, _lastWindowWidth = null;
-//Readapts the maximum height of the carousel's slides to the bottom of the page minus EXTRA_SPACE_AFTER_SLIDES_PX.
-//Does not execute unless "forced" is true or the window's size changed since the last execution.
-function recomputeMediaSize(forced)
+//Shows/hides the arrow controls of the carousel.
+function showArrows(show)
 {
-    var currentWindowHeight = $(window).height(), currentWindowWidth = $(window).width();
+    arrows.css("opacity", show ? 1 : 0);
+}
+
+var _lastWindowHeight = null, _lastWindowWidth = null;
+//Readapts element sizes to optimal values, e.g. allowing the maximum height of the carousel's slides to reach the bottom of the page minus EXTRA_SPACE_AFTER_SLIDES_PX.
+//Does not execute unless "forced" is true or the window's size changed since the last execution.
+function recomputeElementSizes(forced)
+{
+    var currentWindowHeight = window.innerHeight, currentWindowWidth = window.innerWidth;
     if (forced || _lastWindowHeight != currentWindowHeight || _lastWindowWidth != currentWindowWidth)
     {
         _lastWindowHeight = currentWindowHeight;
@@ -60,12 +79,10 @@ function recomputeMediaSize(forced)
         var slide_height = Math.max(MIN_SLIDE_HEIGHT_PX, currentWindowHeight - header.outerHeight(true) - $("#media-show-container").outerHeight(true) - EXTRA_SPACE_AFTER_SLIDES_PX + slide.height());
         slide.css("max-height", slide_height + "px");
         sliderHandler.redrawSlider();
-        recomputeMediaSize(false);
-    }
-}
 
-//Shows/hides the arrow controls of the carousel.
-function showArrows(show)
-{
-    $("#media-show-container .bx-controls-direction").css("opacity", show ? 1 : 0);
+        var footerFillerHeight = Math.max(0, currentWindowHeight - wrapper.outerHeight(true) + preFooterFiller.height());
+        preFooterFiller.css("height", footerFillerHeight + "px");
+
+        recomputeElementSizes(false);
+    }
 }
