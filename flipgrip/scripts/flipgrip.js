@@ -24,11 +24,11 @@ var sliderHandler = null;
 //Reference to the carousel's arrow controls.
 var arrows = null;
 
-//Reference to the slider's img elements.
+//Reference to the slider's img elements. It is assumed that the images have equal dimensions.
 var sliderImages = null;
 
-//Reference to the slider's iframe element.
-var sliderVideo = null;
+//Reference to the wrapper of the slider's iframe element.
+var sliderVideoWrapper = null;
 
 var _ready = false;
 $(document).ready(function ()
@@ -40,7 +40,7 @@ $(document).ready(function ()
     carouselOuterWrapper = $("#media-show-container");
     carouselAdjuster = $("#media-show-adjuster");
     sliderImages = $("#media-show img");
-    sliderVideo = $("#media-show iframe");
+    sliderVideoWrapper = $("#movie-wrapper");
 
     carousel.css("display", "block");//Start displaying the carousel
 
@@ -97,9 +97,10 @@ function recomputeElementSizes(forced, twoPass)
         sliderImages.css("max-height", slide_height + "px");
         sliderHandler.redrawSlider();
 
-        sliderVideo.css("max-height", slide_height + "px");
-        sliderVideo.css("height", sliderImages.outerHeight() + "px");
-        sliderVideo.css("width", sliderImages.outerWidth() + "px");
+        sliderVideoWrapper.css("max-height", slide_height + "px");
+        sliderVideoWrapper.css("height", sliderImages.outerHeight() + "px");
+        sliderVideoWrapper.css("width", sliderImages.outerWidth() + "px");
+
         sliderHandler.redrawSlider();
 
         if (twoPass === true)

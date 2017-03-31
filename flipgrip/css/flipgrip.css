@@ -111,7 +111,20 @@ footer
 
 #media-show iframe
 {
+    width: 100%;
+    height: 100%;
+    max-width: 1920px; /*This is the embedded video's maximum resolution*/
+    max-height: 1080px;
+}
+
+#movie-wrapper
+{
     max-height: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #media-show li[aria-hidden="true"] img,
