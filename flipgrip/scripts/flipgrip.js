@@ -54,7 +54,7 @@ $(document).ready(function ()
     //Compute optimal element sizes and subscribe to window resize event (also recompute sizes automatically when window resize event isn't received)
     recomputeElementSizes(true);
     $(window).resize(function () { recomputeElementSizes(false); });
-    setInterval(function () { recomputeElementSizes(false); }, 1000);
+    setInterval(function () { recomputeElementSizes(false); }, 250);
 });
 
 $(window).on("load", function ()
