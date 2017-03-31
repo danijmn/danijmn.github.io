@@ -104,7 +104,7 @@ footer
     margin-right: auto;
     box-sizing: border-box;
     border: 5px solid black;
-    border-radius: 25px;
+    border-radius: 20px;
     transition: opacity 0.3s;
     transition: transform 0.4s ease-in-out;
 }
