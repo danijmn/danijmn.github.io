@@ -6,9 +6,6 @@ var MIN_SLIDE_HEIGHT_PX = 200;
 //The minimum extra space to keep after the slides.
 var EXTRA_SPACE_AFTER_SLIDES_PX = 35;
 
-//Reference to the element that wraps all elements inside the page's body.
-var wrapper = null;
-
 //Reference to the page's header containing the logo.
 var header = null;
 
@@ -21,9 +18,6 @@ var sliderHandler = null;
 //Reference to the carousel's arrow controls.
 var arrows = null;
 
-//Reference to the element that fills space between the main content and the footer when the window is taller than the content.
-var preFooterFiller = null;
-
 //Reference to the carousel's container whose max-width will be adjusted so as to never exceed the width of the window minus the width of the scrollbar.
 var carouselAdjuster = null;
 
@@ -32,10 +26,8 @@ $(document).ready(function ()
 {
     _ready = true;
 
-    wrapper = $("#wrapper");
     header = $("header");
     carousel = $("#media-show");
-    preFooterFiller = $("#pre-footer-filler");
     carouselAdjuster = $("#media-show-adjuster");
 
     carousel.css("display", "block");//Start displaying the carousel
@@ -92,8 +84,5 @@ function recomputeElementSizes(forced)
         var slide_height = Math.max(MIN_SLIDE_HEIGHT_PX, currentWindowHeight - header.outerHeight(true) - $("#media-show-container").outerHeight(true) - EXTRA_SPACE_AFTER_SLIDES_PX + slide.height());
         slide.css("max-height", slide_height + "px");
         sliderHandler.redrawSlider();
-
-        var footerFillerHeight = Math.max(0, currentWindowHeight - wrapper.outerHeight(true) + preFooterFiller.height());
-        preFooterFiller.css("height", footerFillerHeight + "px");
     }
 }

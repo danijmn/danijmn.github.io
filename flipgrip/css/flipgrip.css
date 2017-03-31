@@ -7,14 +7,26 @@
 /*GLOBAL AND BODY RULES*/
 html
 {
-    min-height: 100%;
+    height: 100%;
 }
 
 body
 {
-    min-height: 100%;
+    height: 100%;
     background-color: rgb(35, 60, 75);
     background-image: url(../media/bg_stars_transparent.png), linear-gradient(to bottom, rgb(45, 90, 100), rgb(35, 60, 75));
+}
+
+#wrapper
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#pre-footer-filler
+{
+    flex: 1 0 auto;
 }
 
 body,
