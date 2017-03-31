@@ -51,8 +51,16 @@ body,
 /*SLIDER*/
 #media-show-container
 {
-    padding: 25px 5% 15px 5%;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+#media-show-adjuster
+{
+    max-width: 0px;
+    box-sizing: border-box;
+    padding: 25px 5% 15px 5%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #media-show-container .bx-wrapper
