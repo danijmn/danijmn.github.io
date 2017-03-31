@@ -12,14 +12,23 @@ var header = null;
 //Reference to the page's media carousel/slider.
 var carousel = null;
 
+//Reference to the outer element that wraps the carousel.
+var carouselOuterWrapper = null;
+
+//Reference to the carousel's container whose max-width will be adjusted so as to never exceed the width of the window minus the width of the scrollbar.
+var carouselAdjuster = null;
+
 //Reference to the bxSlider component of the carousel.
 var sliderHandler = null;
 
 //Reference to the carousel's arrow controls.
 var arrows = null;
 
-//Reference to the carousel's container whose max-width will be adjusted so as to never exceed the width of the window minus the width of the scrollbar.
-var carouselAdjuster = null;
+//Reference to the slider's img elements.
+var sliderImages = null;
+
+//Reference to the slider's iframe element.
+var sliderVideo = null;
 
 var _ready = false;
 $(document).ready(function ()
@@ -28,7 +37,10 @@ $(document).ready(function ()
 
     header = $("header");
     carousel = $("#media-show");
+    carouselOuterWrapper = $("#media-show-container");
     carouselAdjuster = $("#media-show-adjuster");
+    sliderImages = $("#media-show img");
+    sliderVideo = $("#media-show iframe");
 
     carousel.css("display", "block");//Start displaying the carousel
 
@@ -38,21 +50,22 @@ $(document).ready(function ()
         slideMargin: 30,
         speed: 300,
         keyboardEnabled: true,
+        useCSS: false,
         responsive: false//We'll handle responsiveness ourselves and ask the slider to redraw when appropriate
     });
 
     arrows = $("#media-show-container .bx-controls-direction");
 
     //Compute optimal element sizes and subscribe to window resize event (also recompute sizes automatically when window resize event isn't received)
-    recomputeElementSizes(true);
-    $(window).resize(function () { recomputeElementSizes(false); });
-    setInterval(function () { recomputeElementSizes(false); }, 250);
+    recomputeElementSizes(true, true);
+    $(window).resize(function () { recomputeElementSizes(false, false); });
+    setInterval(function () { recomputeElementSizes(false, false); }, 250);
 });
 
 $(window).on("load", function ()
 {
-    if (_ready)
-        recomputeElementSizes(true);//Recompute sizes once all content is loaded (unless document.ready hasn't run yet)
+    if (_ready === true)
+        recomputeElementSizes(true, true);//Recompute sizes once all content is loaded (unless document.ready hasn't run yet)
 });
 
 //Shows/hides the arrow controls of the carousel.
@@ -64,10 +77,10 @@ function showArrows(show)
 var _lastWindowHeight = null, _lastWindowWidth = null, _lastWindowWidthWithScrollbar = null, _lastCarouselWidth = null;
 //Readapts element sizes to optimal values, e.g. allowing the maximum height of the carousel's slides to reach the bottom of the page minus EXTRA_SPACE_AFTER_SLIDES_PX.
 //Does not execute unless "forced" is true or the window's size changed since the last execution.
-function recomputeElementSizes(forced)
+function recomputeElementSizes(forced, twoPass)
 {
     var currentWindowHeight = $(window).height(), currentWindowWidth = $(window).width(), currentWindowWidthWithScrollbar = window.innerWidth;
-    if (forced || _lastWindowHeight != currentWindowHeight || _lastWindowWidth != currentWindowWidth)
+    if (forced === true || _lastWindowHeight != currentWindowHeight || _lastWindowWidth != currentWindowWidth)
     {
         if (_lastCarouselWidth != null && _lastWindowWidthWithScrollbar == currentWindowWidthWithScrollbar)
             _lastCarouselWidth = Math.min(_lastCarouselWidth, currentWindowWidth);
@@ -80,9 +93,16 @@ function recomputeElementSizes(forced)
 
         carouselAdjuster.css("max-width", _lastCarouselWidth + "px");
 
-        var slide = $("#media-show img");
-        var slide_height = Math.max(MIN_SLIDE_HEIGHT_PX, currentWindowHeight - header.outerHeight(true) - $("#media-show-container").outerHeight(true) - EXTRA_SPACE_AFTER_SLIDES_PX + slide.height());
-        slide.css("max-height", slide_height + "px");
+        var slide_height = Math.max(MIN_SLIDE_HEIGHT_PX, currentWindowHeight - header.outerHeight(true) - carouselOuterWrapper.outerHeight(true) - EXTRA_SPACE_AFTER_SLIDES_PX + sliderImages.outerHeight());
+        sliderImages.css("max-height", slide_height + "px");
         sliderHandler.redrawSlider();
+
+        sliderVideo.css("max-height", slide_height + "px");
+        sliderVideo.css("height", sliderImages.outerHeight() + "px");
+        sliderVideo.css("width", sliderImages.outerWidth() + "px");
+        sliderHandler.redrawSlider();
+
+        if (twoPass === true)
+            recomputeElementSizes(forced, false);
     }
 }
