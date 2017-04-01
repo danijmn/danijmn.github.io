@@ -13,8 +13,7 @@ html
 body
 {
     height: 100%;
-    background-color: rgb(35, 60, 75);
-    background-image: url(../media/bg_stars_transparent.png), linear-gradient(to bottom, rgb(45, 90, 100), rgb(35, 60, 75));
+    background-color: rgb(245, 145, 5);
 }
 
 #wrapper
@@ -43,13 +42,6 @@ body,
     color: white;
 }
 
-#info-wrapper,
-#pre-footer-filler,
-footer
-{
-    background-color: rgb(245, 145, 5);
-}
-
 /*LOGO*/
 #logo-wrapper
 {
@@ -67,6 +59,12 @@ footer
 
 /*SLIDER*/
 #media-show-container
+{
+    background-color: rgb(40, 75, 90);
+    background: url(../media/bg_stars_transparent.png), rgb(40, 75, 90);
+}
+
+#media-show-subcontainer
 {
     background-color: rgba(0, 0, 0, 0.5);
 }
