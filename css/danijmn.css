@@ -1,0 +1,117 @@
+﻿html
+{
+    height: 100%;
+}
+
+body
+{
+    height: 100%;
+}
+
+#wrapper
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bg-cover
+{
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+}
+
+#wrapper
+{
+    background-color: rgb(285, 185, 145);
+}
+
+#wrapper:hover
+{
+    background-color: rgb(170, 0, 255);
+}
+
+#bg-cover:hover
+{
+    background-color: rgb(285, 185, 145);
+}
+
+a
+{
+    outline: none;
+    text-align: center;
+    margin: 10px;
+    z-index: 1;
+}
+
+#img-container
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 30px;
+    border: 5px solid black;
+    border-radius: 25px;
+    transition: border 0.55s linear;
+}
+
+a:focus #img-container,
+a:hover #img-container
+{
+    border: 5px solid white;
+}
+
+#logo
+{
+    max-width: 100%;
+    padding-right: 25px;
+}
+
+#click-img
+{
+    max-width: 100%;
+    display: inline;
+    width: 93px;
+    height: 143px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: clickImgAnimation 0.32s linear infinite;
+}
+
+@keyframes clickImgAnimation
+{
+    0%
+    {
+        background-image: url(../flipgrip/media/tap_rest.png);
+        transform: translateY(0);
+    }
+
+    25%
+    {
+        background-image: url(../flipgrip/media/tap_click.png);
+        transform: translateY(-20px);
+    }
+
+    50%
+    {
+        background-image: url(../flipgrip/media/tap_click.png);
+        transform: translateY(-30px);
+    }
+
+    75%
+    {
+        background-image: url(../flipgrip/media/tap_rest.png);
+        transform: translateY(-20px);
+    }
+
+    100%
+    {
+        background-image: url(../flipgrip/media/tap_rest.png);
+        transform: translateY(0);
+    }
+}
