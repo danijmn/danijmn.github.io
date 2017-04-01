@@ -6,6 +6,12 @@ var MIN_SLIDE_HEIGHT_PX = 200;
 //The minimum extra space to keep after the slides.
 var EXTRA_SPACE_AFTER_SLIDES_PX = 35;
 
+//The opacity of the slider controls when shown.
+var SLIDER_CONTROLS_MAX_OPACITY = 0.9;
+
+//The opacity of the slider controls when faded.
+var SLIDER_CONTROLS_MIN_OPACITY = 0.4;
+
 //Reference to the page's header containing the logo.
 var header = null;
 
@@ -55,6 +61,7 @@ $(document).ready(function ()
     });
 
     arrows = $("#media-show-container .bx-controls-direction");
+    showArrows(false);
 
     //Compute optimal element sizes and subscribe to window resize event (also recompute sizes automatically when window resize event isn't received)
     recomputeElementSizes(true, true);
@@ -68,10 +75,10 @@ $(window).on("load", function ()
         recomputeElementSizes(true, true);//Recompute sizes once all content is loaded (unless document.ready hasn't run yet)
 });
 
-//Shows/hides the arrow controls of the carousel.
+//Shows/fades the arrow controls of the carousel.
 function showArrows(show)
 {
-    arrows.css("opacity", show ? 1 : 0);
+    arrows.css("opacity", show ? SLIDER_CONTROLS_MAX_OPACITY : SLIDER_CONTROLS_MIN_OPACITY);
 }
 
 var _lastWindowHeight = null, _lastWindowWidth = null, _lastWindowWidthWithScrollbar = null, _lastCarouselWidth = null;
