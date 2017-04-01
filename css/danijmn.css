@@ -6,6 +6,8 @@
 body
 {
     height: 100%;
+    background-color: rgb(285, 185, 145);
+    transition: background-color 0.2s linear;
 }
 
 #wrapper
@@ -17,34 +19,11 @@ body
     justify-content: center;
 }
 
-#bg-cover
-{
-    min-width: 100%;
-    min-height: 100%;
-    position: absolute;
-}
-
-#wrapper
-{
-    background-color: rgb(285, 185, 145);
-}
-
-#wrapper:hover
-{
-    background-color: rgb(170, 0, 255);
-}
-
-#bg-cover:hover
-{
-    background-color: rgb(285, 185, 145);
-}
-
 a
 {
     outline: none;
     text-align: center;
     margin: 10px;
-    z-index: 1;
 }
 
 #img-container
