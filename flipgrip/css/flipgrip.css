@@ -161,7 +161,7 @@ body,
 
 #launch-info
 {
-    font-size: 3rem;
+    font-size: 4rem;
     text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black, 3px 2px 1px black;
 }
 
@@ -185,6 +185,11 @@ body,
 }
 
 #support-contact
+{
+    padding-bottom: 1rem;
+}
+
+#info-contact
 {
     padding-bottom: 1rem;
 }
