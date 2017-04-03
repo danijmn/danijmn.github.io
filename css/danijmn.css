@@ -59,6 +59,7 @@ a:hover #img-container
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    background-image: url(../flipgrip/media/tap_rest.png);
     -webkit-animation: clickImgAnimation 0.32s linear infinite;
     animation: clickImgAnimation 0.32s linear infinite;
 }
