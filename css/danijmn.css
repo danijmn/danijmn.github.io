@@ -59,7 +59,41 @@ a:hover #img-container
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    -webkit-animation: clickImgAnimation 0.32s linear infinite;
     animation: clickImgAnimation 0.32s linear infinite;
+}
+
+@-webkit-keyframes clickImgAnimation
+{
+    0%
+    {
+        background-image: url(../flipgrip/media/tap_rest.png);
+        transform: translateY(0);
+    }
+
+    25%
+    {
+        background-image: url(../flipgrip/media/tap_click.png);
+        transform: translateY(-20px);
+    }
+
+    50%
+    {
+        background-image: url(../flipgrip/media/tap_click.png);
+        transform: translateY(-30px);
+    }
+
+    75%
+    {
+        background-image: url(../flipgrip/media/tap_rest.png);
+        transform: translateY(-20px);
+    }
+
+    100%
+    {
+        background-image: url(../flipgrip/media/tap_rest.png);
+        transform: translateY(0);
+    }
 }
 
 @keyframes clickImgAnimation
