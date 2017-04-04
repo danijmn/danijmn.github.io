@@ -155,7 +155,7 @@ body,
 {
     text-align: center;
     padding-top: 3rem;
-    padding-bottom: 5rem;
+    padding-bottom: 6rem;
     border-top: 5px solid black;
 }
 
@@ -175,23 +175,18 @@ body,
 #contacts
 {
     text-align: center;
-    padding-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#contacts div
+{
+    padding-bottom: 1rem;
 }
 
 #contacts a
 {
     color: white;
     text-decoration: none;
-}
-
-#support-contact
-{
-    padding-bottom: 1rem;
-}
-
-#info-contact
-{
-    padding-bottom: 1rem;
 }
 
 .explicit-email
