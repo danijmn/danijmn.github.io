@@ -28,11 +28,7 @@ a
 
 #img-container
 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 30px;
+    padding: 40px;
     border: 5px solid black;
     border-radius: 25px;
     transition: border 0.55s linear;
@@ -46,89 +42,5 @@ a:hover #img-container
 
 #logo
 {
-    padding-right: 25px;
-}
-
-#logo img
-{
     max-width: 100%;
-}
-
-#click-img
-{
-    max-width: 100%;
-    width: 93px;
-    height: 143px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    background-image: url(../flipgrip/media/tap_rest.png);
-    -webkit-animation: clickImgAnimation 0.32s linear infinite;
-    animation: clickImgAnimation 0.32s linear infinite;
-}
-
-@-webkit-keyframes clickImgAnimation
-{
-    0%
-    {
-        background-image: url(../flipgrip/media/tap_rest.png);
-        transform: translateY(0);
-    }
-
-    25%
-    {
-        background-image: url(../flipgrip/media/tap_click.png);
-        transform: translateY(-20px);
-    }
-
-    50%
-    {
-        background-image: url(../flipgrip/media/tap_click.png);
-        transform: translateY(-30px);
-    }
-
-    75%
-    {
-        background-image: url(../flipgrip/media/tap_rest.png);
-        transform: translateY(-20px);
-    }
-
-    100%
-    {
-        background-image: url(../flipgrip/media/tap_rest.png);
-        transform: translateY(0);
-    }
-}
-
-@keyframes clickImgAnimation
-{
-    0%
-    {
-        background-image: url(../flipgrip/media/tap_rest.png);
-        transform: translateY(0);
-    }
-
-    25%
-    {
-        background-image: url(../flipgrip/media/tap_click.png);
-        transform: translateY(-20px);
-    }
-
-    50%
-    {
-        background-image: url(../flipgrip/media/tap_click.png);
-        transform: translateY(-30px);
-    }
-
-    75%
-    {
-        background-image: url(../flipgrip/media/tap_rest.png);
-        transform: translateY(-20px);
-    }
-
-    100%
-    {
-        background-image: url(../flipgrip/media/tap_rest.png);
-        transform: translateY(0);
-    }
 }
