@@ -46,14 +46,17 @@ a:hover #img-container
 
 #logo
 {
-    max-width: 100%;
     padding-right: 25px;
+}
+
+#logo img
+{
+    max-width: 100%;
 }
 
 #click-img
 {
     max-width: 100%;
-    display: inline;
     width: 93px;
     height: 143px;
     background-repeat: no-repeat;
