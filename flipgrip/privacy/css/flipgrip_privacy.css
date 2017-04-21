@@ -12,7 +12,7 @@ html
 body
 {
     height: 100%;
-    background-color: rgb(185, 120, 55);
+    background-color: rgb(195, 75, 255);
 }
 
 #wrapper
@@ -31,7 +31,6 @@ main
 {
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
-    text-shadow: 2px 2px 10px black;
 }
 
 .title,

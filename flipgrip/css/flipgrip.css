@@ -13,7 +13,7 @@ html
 body
 {
     height: 100%;
-    background-color: rgb(245, 160, 5);
+    background-color: rgb(195, 75, 255);
 }
 
 #wrapper
@@ -161,7 +161,7 @@ body,
 
 #launch-info
 {
-    font-size: 4rem;
+    font-size: 3rem;
     text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black, 3px 2px 1px black;
 }
 
