@@ -155,8 +155,15 @@ body,
 {
     text-align: center;
     padding-top: 3rem;
-    padding-bottom: 6rem;
+    padding-bottom: 4rem;
     border-top: 5px solid black;
+}
+
+#info-wrapper img
+{
+    display: inline-block;
+    margin: 8px;
+    height: 64px;
 }
 
 #launch-info
