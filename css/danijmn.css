@@ -6,7 +6,7 @@
 body
 {
     height: 100%;
-    background-color: rgb(35, 55, 65); /*This should match script's definition of default BG color*/
+    background-color: rgb(35, 55, 65);
     transition: background-color 0.2s linear;
 }
 
@@ -23,6 +23,7 @@ body
 
 a
 {
+	outline: none;
     text-align: center;
     display: inline-block;
     padding-top: 10px;
