@@ -1,7 +1,7 @@
 "use strict";
 
 //The default color of the background
-var DEFAULT_BG_COLOR = "rgb(285, 185, 145)";
+var DEFAULT_BG_COLOR = "rgb(35, 55, 65)";
 
 //The color of the background when the button to Flip Grip is hovered
 var FLIPGRIP_BG_COLOR = "rgb(170, 0, 255)";

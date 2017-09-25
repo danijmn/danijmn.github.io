@@ -6,41 +6,31 @@
 body
 {
     height: 100%;
-    background-color: rgb(285, 185, 145);
+    background-color: rgb(35, 55, 65); /*This should match script's definition of default BG color*/
     transition: background-color 0.2s linear;
 }
 
 #wrapper
 {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 90%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+	padding-top: 10vh;
+	padding-bottom: 10px;
 }
 
 a
 {
-    outline: none;
     text-align: center;
-    margin: 10px;
+    display: inline-block;
+    padding-top: 10px;
 }
 
-#img-container
+#banner
 {
-    padding: 40px;
-    border: 5px solid black;
-    border-radius: 25px;
-    transition: border 0.55s linear;
-}
-
-a:focus #img-container,
-a:hover #img-container
-{
-    border: 5px solid white;
-}
-
-#logo
-{
-    max-width: 100%;
+	display: block;
+	max-width: 100%;
+    box-sizing: border-box;
 }
