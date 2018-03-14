@@ -93,5 +93,13 @@ main .container
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
+    text-align: center;
     background-color: black;
+}
+
+#copyright a
+{
+    color: white;
+    text-shadow: none;
+    text-decoration: none;
 }
