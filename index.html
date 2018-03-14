@@ -4,8 +4,10 @@
     <meta charset="utf-8" />
     <title>Daniel Nora</title>
     <meta name="author" content="Daniel Nora">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css">
     <link rel="stylesheet" type="text/css" href="css/danijmn.css">
 
     <script>
@@ -25,9 +27,22 @@
 </head>
 <body>
     <div id="wrapper">
-        <a href="/flipgrip/" onmouseover="changeBG('flipgrip')" onfocus="changeBG('flipgrip')" onmouseout="changeBG(null)" onblur="changeBG(null)">
-            <img id="banner" src="flipgrip/media/banner.png" alt="Flip Grip banner">
-        </a>
+        <div class="container">
+            <div class="intro">
+                <h2>Hello, I'm Daniel&nbsp;Nora! Sometimes I make games.</h2>
+                <h3>Here's what you're looking for:</h3>
+            </div>
+
+            <div class="game_link">
+                <a href="/cardinalchains/"><img src="cardinalchains/media/cc_icon.png" alt="Cardinal Chains icon"></a>
+                <a href="/cardinalchains/"><p>Cardinal Chains</p></a>
+            </div>
+
+            <div class="game_link">
+                <a href="/flipgrip/"><img src="flipgrip/media/fg_icon.png" alt="Flip Grip icon"></a>
+                <a href="/flipgrip/"><p>Flip Grip</p></a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

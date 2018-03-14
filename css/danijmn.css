@@ -6,13 +6,11 @@
 body
 {
     height: 100%;
-    background-color: rgb(35, 55, 65);
-    transition: background-color 0.2s linear;
+    background-color: rgb(220, 220, 220);
 }
 
 #wrapper
 {
-    width: 90%;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -21,17 +19,25 @@ body
 	padding-bottom: 10px;
 }
 
-a
+.game_link
 {
-	outline: none;
-    text-align: center;
     display: inline-block;
-    padding-top: 10px;
+    margin: 20px;
 }
 
-#banner
+.game_link img
 {
-	display: block;
-	max-width: 100%;
-    box-sizing: border-box;
+    max-width: 128px;
+    max-height: 128px;
+}
+
+.game_link p
+{
+    margin-top: 5px;
+}
+
+.game_link a
+{
+    color: black;
+    text-decoration: none;
 }
