@@ -209,6 +209,11 @@ body,
     padding-bottom: 10px;
     text-align: center;
     background-color: black;
+}
+
+#copyright a
+{
     color: white;
     text-shadow: none;
+    text-decoration: none;
 }
