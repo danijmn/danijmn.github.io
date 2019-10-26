@@ -83,6 +83,11 @@ body
     color: white;
 }
 
+footer
+{
+    margin-top: 20px;
+}
+
 #copyright
 {
     width: 100%;

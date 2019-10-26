@@ -202,6 +202,11 @@ body,
     font-weight: bold;
 }
 
+footer
+{
+    margin-top: 20px;
+}
+
 #copyright
 {
     width: 100%;

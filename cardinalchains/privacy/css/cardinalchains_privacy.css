@@ -57,6 +57,11 @@ main .container h3
 }
 
 /*COPYRIGHT*/
+footer
+{
+    margin-top: 20px;
+}
+
 #copyright
 {
     width: 100%;

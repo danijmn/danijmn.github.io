@@ -77,6 +77,11 @@ main .container
     max-height: 65px;
 }
 
+footer
+{
+    margin-top: 20px;
+}
+
 #copyright
 {
     width: 100%;
