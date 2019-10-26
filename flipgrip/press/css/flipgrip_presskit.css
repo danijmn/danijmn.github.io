@@ -95,6 +95,7 @@ main .container
     padding-bottom: 10px;
     text-align: center;
     background-color: black;
+    color: white;
 }
 
 #copyright a
