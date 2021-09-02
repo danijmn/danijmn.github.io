@@ -67,6 +67,20 @@ a
     border: 3px solid white;
 }
 
+@media (orientation: portrait) 
+{
+    #screenshot-wrapper
+    {
+        padding: 20px 0px 40px 0px;
+        padding: 2vh 0px 4vh 0px;
+    }
+
+    #screenshot 
+    {
+        max-width: 85%;
+    }
+}
+
 /*INFO*/
 #info-wrapper
 {
