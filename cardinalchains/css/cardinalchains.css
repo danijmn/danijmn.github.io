@@ -18,6 +18,12 @@ a
     text-decoration: none;
 }
 
+.horizontal_separator
+{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
 #wrapper
 {
     height: 100%;
