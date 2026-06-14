@@ -34,7 +34,7 @@ a
 	margin-right: auto;
 	padding-top: 50px;
 	padding-top: 10vh;
-    max-width: 900px;
+    max-width: 700px;
 }
 
 .intro
@@ -62,7 +62,7 @@ a
 
 .list_of_links
 {
-    margin: 30px auto 30px auto;
+    margin: 50px auto 50px auto;
 }
 
 ul
